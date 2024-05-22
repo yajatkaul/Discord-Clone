@@ -7,7 +7,6 @@ import { redirect } from "next/navigation";
 const SetUpPage = async () => {
   const profile = await initalProfile();
 
-  // Check if profile is a JSX element (indicating redirection)
   if (profile && typeof profile === "object" && "id" in profile) {
     const server = await db.server.findFirst({
       where: {
