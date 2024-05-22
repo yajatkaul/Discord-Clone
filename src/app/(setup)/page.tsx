@@ -1,3 +1,4 @@
+import InitialModel from "@/components/modals/initial-modal";
 import { db } from "@/lib/db";
 import { initalProfile } from "@/lib/initial-profile";
 import { UserButton } from "@clerk/nextjs";
@@ -6,25 +7,27 @@ import { redirect } from "next/navigation";
 const SetUpPage = async () => {
   const profile = await initalProfile();
 
-  const server = await db.server.findFirst({
-    where: {
-      members: {
-        some: {
-          profileId: profile.id,
+  // Check if profile is a JSX element (indicating redirection)
+  if (profile && typeof profile === "object" && "id" in profile) {
+    const server = await db.server.findFirst({
+      where: {
+        members: {
+          some: {
+            profileId: profile.id,
+          },
         },
       },
-    },
-  });
+    });
 
-  if (server) {
-    return redirect(`/servers/${server.id}`);
+    if (server) {
+      return redirect(`/servers/${server.id}`);
+    }
+  } else {
+    // Handle redirection
+    return profile;
   }
 
-  return (
-    <div>
-      <UserButton />
-    </div>
-  );
+  return <InitialModel />;
 };
 
 export default SetUpPage;
