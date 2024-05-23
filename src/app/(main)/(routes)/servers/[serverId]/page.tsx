@@ -1,7 +1,7 @@
 import React from "react";
 
 const ServerPage = () => {
-  return <div>ServerPage</div>;
+  return <div>ID</div>;
 };
 
 export default ServerPage;
