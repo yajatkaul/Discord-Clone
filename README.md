@@ -39,6 +39,8 @@ DIRECT_URL= url(Supabase is free)
 
 UPLOADTHING_SECRET= key
 UPLOADTHING_APP_ID= key
+
+#NEXT_PUBLIC_SITE_URL = (when you deploy)
 ```
 
 ###
