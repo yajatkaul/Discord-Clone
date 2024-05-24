@@ -41,6 +41,10 @@ UPLOADTHING_SECRET= key
 UPLOADTHING_APP_ID= key
 
 #NEXT_PUBLIC_SITE_URL = (when you deploy)
+
+LIVEKIT_API_KEY=APIgZZycHSubTZ4
+LIVEKIT_API_SECRET=IfZvnKKe94PhtliqPxypOZRdEBLLxwBW2UhfuIsfDCKD
+NEXT_PUBLIC_LIVEKIT_URL= wss://discord-clone-dpaxq52m.livekit.cloud
 ```
 
 ###
