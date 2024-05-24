@@ -1,6 +1,5 @@
 import { cn } from "@/lib/utils";
-import { Avatar } from "./ui/avatar";
-import { AvatarImage } from "@radix-ui/react-avatar";
+import { Avatar, AvatarImage } from "./ui/avatar";
 
 interface UserAvatarProps {
   src?: string;
