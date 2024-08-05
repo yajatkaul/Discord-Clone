@@ -16,6 +16,8 @@
   <img src="https://cdn.simpleicons.org/socketdotio/010101" height="40" alt="socketio logo"  />
   <img width="12" />
   <img src="https://skillicons.dev/icons?i=prisma" height="40" alt="prisma logo"  />
+  <img width="12" />
+  <img src="https://skillicons.dev/icons?i=supabase" height="40" alt="supabase logo"  />
 </div>
 
 ###
