@@ -1,56 +1,186 @@
-<h1 align="left">Tech Used</h1>
+# 💬 Discord Clone
 
-###
+A full-stack real-time chat application inspired by Discord, built using modern web technologies like Next.js, TypeScript, Socket.io, and Prisma.
 
-<div align="left">
-  <img src="https://skillicons.dev/icons?i=ts" height="40" alt="typescript logo"  />
-  <img width="12" />
-  <img src="https://skillicons.dev/icons?i=solidity" height="40" alt="solidity logo"  />
-  <img width="12" />
-  <img src="https://skillicons.dev/icons?i=tailwind" height="40" alt="tailwindcss logo"  />
-  <img width="12" />
-  <img src="https://skillicons.dev/icons?i=nextjs" height="40" alt="nextjs logo"  />
-  <img width="12" />
-  <img src="https://skillicons.dev/icons?i=postgres" height="40" alt="postgresql logo"  />
-  <img width="12" />
-  <img src="https://cdn.simpleicons.org/socketdotio/010101" height="40" alt="socketio logo"  />
-  <img width="12" />
-  <img src="https://skillicons.dev/icons?i=prisma" height="40" alt="prisma logo"  />
-  <img width="12" />
-  <img src="https://skillicons.dev/icons?i=supabase" height="40" alt="supabase logo"  />
-</div>
+This project replicates core Discord functionalities including servers, channels, messaging, and authentication—while focusing on scalability, performance, and clean architecture.
 
-###
+---
 
-<p align="left">.env</p>
+## 🚀 Features
 
-###
+* 💬 Real-time messaging using WebSockets (Socket.io)
+* 🏠 Server & channel-based communication
+* 🔐 Authentication with Clerk
+* 📁 File uploads using UploadThing
+* 📡 Voice & video support via LiveKit
+* 🧠 Database management with Prisma + PostgreSQL (Supabase)
+* 🎨 Modern UI with Tailwind CSS
+* ⚡ Built with Next.js App Router
 
-```shell
-NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY= key
-CLERK_SECRET_KEY= key
+---
+
+## 🧠 Tech Stack
+
+* **Frontend:** Next.js, React, TypeScript
+* **Backend:** Next.js API routes / server actions
+* **Database:** PostgreSQL (Supabase) + Prisma ORM
+* **Real-time:** Socket.io
+* **Auth:** Clerk
+* **Media:** LiveKit (voice/video)
+* **Uploads:** UploadThing
+* **Styling:** Tailwind CSS
+
+---
+
+## 🏗️ Architecture
+
+```bash
+Client (Next.js App)
+        ↓ WebSocket / HTTP
+Server (API Routes / Socket Server)
+        ↓
+Database (PostgreSQL via Prisma)
+```
+
+---
+
+## 📦 Core Functionality
+
+* Create and manage servers
+* Create channels (text / voice)
+* Send and receive real-time messages
+* User authentication and sessions
+* Media/file sharing
+* Scalable backend structure
+
+---
+
+## 🛠️ Getting Started
+
+### 1. Clone the Repository
+
+```bash
+git clone https://github.com/yajatkaul/Discord-Clone.git
+cd Discord-Clone
+```
+
+---
+
+### 2. Install Dependencies
+
+```bash
+npm install
+```
+
+---
+
+### 3. Setup Environment Variables
+
+Create a `.env` file in the root directory and add the following:
+
+```env
+NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=key
+CLERK_SECRET_KEY=key
 
 NEXT_PUBLIC_CLERK_SIGN_IN_URL=/sign-in
 NEXT_PUBLIC_CLERK_SIGN_UP_URL=/sign-up
 
-# This was inserted by `prisma init`:
+# Prisma Configuration
 # Environment variables declared in this file are automatically made available to Prisma.
-# See the documentation for more detail: https://pris.ly/d/prisma-schema#accessing-environment-variables-from-the-schema
+# Docs: https://pris.ly/d/prisma-schema#accessing-environment-variables-from-the-schema
 
-# Prisma supports the native connection string format for PostgreSQL, MySQL, SQLite, SQL Server, MongoDB and CockroachDB.
-# See the documentation for all the connection string options: https://pris.ly/d/connection-strings
+# Supported databases: PostgreSQL, MySQL, SQLite, SQL Server, MongoDB, CockroachDB
+# Docs: https://pris.ly/d/connection-strings
 
-DATABASE_URL= url(Supabase is free)
-DIRECT_URL= url(Supabase is free)
+DATABASE_URL=url  # (Supabase is free)
+DIRECT_URL=url    # (Supabase is free)
 
-UPLOADTHING_SECRET= key
-UPLOADTHING_APP_ID= key
+UPLOADTHING_SECRET=key
+UPLOADTHING_APP_ID=key
 
-#NEXT_PUBLIC_SITE_URL = (when you deploy)
+# NEXT_PUBLIC_SITE_URL= (set this when deploying)
 
-LIVEKIT_API_KEY= key
-LIVEKIT_API_SECRET= key
-NEXT_PUBLIC_LIVEKIT_URL= url
+LIVEKIT_API_KEY=key
+LIVEKIT_API_SECRET=key
+NEXT_PUBLIC_LIVEKIT_URL=url
 ```
 
-###
+---
+
+### 4. Setup Database
+
+```bash
+npx prisma generate
+npx prisma db push
+```
+
+---
+
+### 5. Run the App
+
+```bash
+npm run dev
+```
+
+---
+
+## 📁 Project Structure
+
+```bash
+Discord-Clone/
+├── src/            # Application source code
+├── prisma/         # Database schema
+├── public/         # Static assets
+├── components/     # UI components
+├── app/            # Next.js app router
+└── README.md
+```
+
+---
+
+## ⚡ Highlights
+
+* Real-time communication architecture
+* Scalable full-stack design
+* Clean and maintainable codebase
+* Modern developer tooling
+
+---
+
+## ⚠️ Limitations
+
+* Requires proper environment setup
+* Real-time features depend on WebSocket stability
+* External services required (Clerk, LiveKit, UploadThing)
+
+---
+
+## 🔮 Future Improvements
+
+* 🧵 Threaded conversations
+* 🔔 Notifications system
+* 📱 Mobile optimization
+* 🌐 Deployment guide
+* 🛡️ Role-based permissions
+
+---
+
+## 🤝 Contributing
+
+Contributions are welcome!
+
+1. Fork the repo
+2. Create a new branch
+3. Submit a pull request
+
+---
+
+## 📜 License
+
+MIT License
+
+---
+
+## 💡 Inspiration
+
+Built to explore real-time systems and modern full-stack architecture.
